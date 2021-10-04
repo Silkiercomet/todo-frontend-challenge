@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Todo app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <main class="wrapper">
+    <header class="main__header main__header_light"></header>
+
+    <section class="todo__container">
+      <main class="todo">
+
+        <header class="todo__header">
+          <h1 class="light">TODO</h1>
+          <i class="todo__header_icon_light"></i>
+        </header>
+
+        <form class="todo__input-container">
+          <label for="first_radio" class="con">
+            <input type="checkbox" name="todo radio" id="first_radio" class="radio">
+            <span class="checkmark"></span>
+          </label>
+          <input type="text" name="input" id="todo-content-input" placeholder="Create a new todo...">
+        </form>
+
+        <section class="todo__list light-background">
+          <menu class="todo__items">
+            <li class="todo__item">
+              <label for="checkbox-item" class="con">
+                <input type="checkbox" name="todo radio" id="checkbox-item" class="radio">
+                <span class="checkmark"></span>
+              </label>
+              <span class="todo__text">javascript course</span>
+              <i class="cross"><img src="images/icon-cross.svg" alt=""></i>
+            </li>
+            <li class="todo__item">
+              <label for="checkbox-item" class="con">
+                <input type="checkbox" name="todo radio" id="checkbox-item" class="radio">
+                <span class="checkmark"></span>
+              </label>
+              <span class="todo__text">javascript course aprt 2</span>
+              <i class="cross"><img src="images/icon-cross.svg" alt=""></i>
+            </li>
+            <li class="todo__item">
+              <label for="checkbox-item" class="con">
+                <input type="checkbox" name="todo radio" id="checkbox-item" class="radio">
+                <span class="checkmark"></span>
+              </label>
+              <span class="todo__text">javascript course aprt 2</span>
+              <i class="cross"><img src="images/icon-cross.svg" alt=""></i>
+            </li>
+            <li class="todo__item">
+              <label for="checkbox-item" class="con">
+                <input type="checkbox" name="todo radio" id="checkbox-item" class="radio">
+                <span class="checkmark"></span>
+              </label>
+              <span class="todo__text">javascript course aprt 2</span>
+              <i class="cross"><img src="images/icon-cross.svg" alt=""></i>
+            </li>
+
+          </menu>
+          <footer class="todo__footer ">
+            <p class="todo__items_remain"><span class="todo__counterleft"></span>items left</p>
+            <nav class="todo__footer_nav">
+              <ul>
+                <li>All</li>
+                <li>Active</li>
+                <li>Completed</li>
+              </ul>
+            </nav>
+            <button class="clear__done">Clear Completed</button>
+          </footer>
+        </section>
+
+
+        <p class="floater">Drag and drop to reorder list</p>
+      </main>
+    </section>
+
+    
+  </main>
+ 
+
+  <!-- Add dynamic number --> 
+
+  
+   
+  
+
+  
+
+  
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+</body>
+</html>
