@@ -18,51 +18,53 @@
   <main class="wrapper">
     <header class="main__header main__header_light"></header>
 
-    <section class="todo__container">
+    <section class="todo__container dark-background-main"><!--dark--> 
       <main class="todo">
 
         <header class="todo__header">
-          <h1 class="light">TODO</h1>
+          <h1 class="lightt">TODO</h1>
           <i class="todo__header_icon_light"></i>
         </header>
 
-        <form class="todo__input-container">
+         <form class="todo__input-container light dark-background "><!--dark--> 
           <label for="first_radio" class="con">
-            <input type="checkbox" name="todo radio" id="first_radio" class="radio">
+            <input type="checkbox" name="todo radio" id="first_radio" class="radio ">
             <span class="checkmark"></span>
           </label>
-          <input type="text" name="input" id="todo-content-input" placeholder="Create a new todo...">
+          <input type="text" name="input" id="todo-content-input" placeholder="Create a new todo..." class=" light dark-background"><!--dark--> 
         </form>
 
-        <section class="todo__list light-background">
-          <menu class="todo__items">
-            <li class="todo__item">
-              <label for="checkbox-item" class="con">
-                <input type="checkbox" name="todo radio" id="checkbox-item" class="radio">
+        <section class="todo__list light_shadow light-background light dark-background"><!--dark--> 
+          <menu class="todo__items light-color dark-color"><!--dark--> 
+            <li class="todo__item ">
+              <input type="checkbox" name="todo radio" id="checkbox-item-0" class="radio">
+              <label for="checkbox-item-0" class="con">
                 <span class="checkmark"></span>
               </label>
               <span class="todo__text">javascript course</span>
               <i class="cross"><img src="images/icon-cross.svg" alt=""></i>
             </li>
-            <li class="todo__item">
-              <label for="checkbox-item" class="con">
-                <input type="checkbox" name="todo radio" id="checkbox-item" class="radio">
+            <li class="todo__item ">
+              <input type="checkbox" name="todo radio" id="checkbox-item-1" class="radio">
+              <label for="checkbox-item-1" class="con">
+
                 <span class="checkmark"></span>
               </label>
               <span class="todo__text">javascript course aprt 2</span>
               <i class="cross"><img src="images/icon-cross.svg" alt=""></i>
             </li>
             <li class="todo__item">
-              <label for="checkbox-item" class="con">
-                <input type="checkbox" name="todo radio" id="checkbox-item" class="radio">
+              <input type="checkbox" name="todo radio" id="checkbox-item-2" class="radio">
+              <label for="checkbox-item-2" class="con">
+
                 <span class="checkmark"></span>
               </label>
               <span class="todo__text">javascript course aprt 2</span>
               <i class="cross"><img src="images/icon-cross.svg" alt=""></i>
             </li>
             <li class="todo__item">
-              <label for="checkbox-item" class="con">
-                <input type="checkbox" name="todo radio" id="checkbox-item" class="radio">
+              <input type="checkbox" name="todo radio" id="checkbox-item-3" class="radio">
+              <label for="checkbox-item-3" class="con">
                 <span class="checkmark"></span>
               </label>
               <span class="todo__text">javascript course aprt 2</span>
@@ -70,16 +72,16 @@
             </li>
 
           </menu>
-          <footer class="todo__footer ">
-            <p class="todo__items_remain"><span class="todo__counterleft"></span>items left</p>
+          <footer class="todo__footer light-color dark-color"><!--dark--> 
+            <p class="todo__items_remain"><span class="todo__counterleft">5 </span>items left</p>
             <nav class="todo__footer_nav">
               <ul>
-                <li>All</li>
+                <li class="active">All</li>
                 <li>Active</li>
                 <li>Completed</li>
               </ul>
             </nav>
-            <button class="clear__done">Clear Completed</button>
+            <button class="clear__done light dark-background">Clear Completed</button><!--dark--> 
           </footer>
         </section>
 
@@ -101,7 +103,7 @@
   
 
   
-
+  <script src="script.js"></script>
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
