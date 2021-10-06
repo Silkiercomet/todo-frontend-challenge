@@ -23,6 +23,7 @@ html{
     box-sizing: inherit;
     padding: 0;
     margin: 0;
+    transition: 200ms ease-in-out;
 }
 body{
     font-family: 'Josefin Sans', sans-serif;
@@ -57,13 +58,16 @@ body{
 /* header */
 
 /* todo container */
+
 .todo__container{
     /* box-model */
     width: 100%;
+    height: 67%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    
 }
 .todo{
     /* box-model */
@@ -88,6 +92,12 @@ body{
     width: 26px;
     height: 26px;
     background-image: url(images/icon-moon.svg);
+    transition: 300ms ease-in-out;
+}
+.todo__header_icon_dark{
+    width: 26px;
+    height: 26px;
+    background-image: url(images/icon-sun.svg);
 }
 
 /* todo input */
@@ -117,6 +127,9 @@ body{
     cursor: pointer;
     border-radius: 50%;
     position: relative;
+}
+.checkmark-dark{
+    border: .1px solid var(--VeryDarkGrayishBlue);
 }
 .checkmark::after{
     content: url(images/icon-check.svg);
@@ -172,7 +185,7 @@ body{
 }
 .radio:checked ~ .todo__text{
     text-decoration: line-through;
-    color: var(--DarkGrayishBlue);
+    color: var(--DarkGrayishBlue) !important;
 }
 /* footer */
 
@@ -212,6 +225,7 @@ body{
     width: 100%;
     text-align: center;
     transform: translateY(20px);
+    color: var(--DarkGrayishBlue);
 }
 
 /* utilities */
