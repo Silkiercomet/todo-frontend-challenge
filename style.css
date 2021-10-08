@@ -121,13 +121,22 @@ body{
     display: none;
 }
 .checkmark{
-    border: .1px solid var(--VeryLightGrayishBlue);
+    border: .1px solid var(--LightGrayishBlue);
     height: 22px;
     width: 22px;
     cursor: pointer;
     border-radius: 50%;
     position: relative;
 }
+
+/* .checkmark:hover{
+    border: 5px solid;
+    
+    border-image-slice: 1;
+    border-image-source: linear-gradient(145deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+    border-radius: 50% !important;
+    
+} */
 .checkmark-dark{
     border: .1px solid var(--VeryDarkGrayishBlue);
 }
@@ -174,7 +183,8 @@ body{
 .cross{
     display: none;
     margin-left: auto;
-    padding-right: 1rem;
+    margin-right: 1rem;
+    cursor: pointer;
 }
 .todo__item:hover > .cross{
     display: inline-block;
@@ -186,6 +196,9 @@ body{
 .radio:checked ~ .todo__text{
     text-decoration: line-through;
     color: var(--DarkGrayishBlue) !important;
+}
+menu.dark-color .todo__item .con .checkmark{
+    border: .1px solid var(--VeryDarkGrayishBlue);
 }
 /* footer */
 
@@ -220,6 +233,7 @@ body{
     background-color: white;
     font-family: 'Josefin Sans', sans-serif;
     text-align: end;
+    cursor: pointer;
 }
 .floater{
     width: 100%;
