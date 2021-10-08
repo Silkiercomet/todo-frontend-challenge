@@ -13,8 +13,8 @@ background = document.querySelector("#black-background"),
 todoForm = document.querySelector("#todo-form"),
 todoInput = document.querySelector("#todo-content-input"),
 icon = document.querySelector("#icon-change"),
-checkmark = document.querySelectorAll(".checkmark"),
-cross = document.querySelector(".cross")
+checkmark = document.querySelectorAll(".checkmark")
+
 
 const togglerMode = () => {
     backgroundHeader.classList.toggle("main__header_dark")
@@ -34,11 +34,12 @@ switcher.addEventListener("click", togglerMode)
 
 const addLi = () => {
     let counter = 0;
+    
     return function(x) {
         let newLi = document.createElement("li")
         newLi.classList.add("todo__item")
         newLi.innerHTML = `
-            <input type="checkbox" name="todo radio" id="checkbox-item-${counter}" class="radio">
+            <input type="checkbox" name="todo radio" id="checkbox-item-${counter}" class="radio radio2">
             <label for="checkbox-item-${counter}" class="con">
              <span class="checkmark"></span>
             </label>
@@ -47,7 +48,8 @@ const addLi = () => {
         `;
         todoItemsColor.appendChild(newLi)
         counter += 1
-        console.log(counter)
+        document.querySelector("#todo-content-input").value = ""
+        
     }
 }
 
@@ -55,20 +57,51 @@ const grabText = () => {
     let todoInput = document.querySelector("#todo-content-input").value;
     if(todoInput == ""){
         alert("no ingrese el campo vacio")
+        throw Error
     }else{
         return todoInput
     }
 }
 
-cross.addEventListener("click", function(){
-    cross.parentElement.remove()
-})
+const countTotal = () => document.querySelector(".todo__counterleft").textContent = `${document.querySelectorAll(".radio2").length} `
+
+const organizedList = () => {
+    let newArray = [], currentArrays = [...document.querySelectorAll(".radio2")],
+    activeElements = currentArrays.filter(a => {
+        if(a.checked !=  true){
+            return a.parentElement
+        }
+    })
+    doneElements = currentArrays.filter(a => {
+        if( a.checked == true){
+            return a.parentElement
+        }
+    })
+    //1 shows all, 2 shows actives and 3 shows completed 
+    console.log(activeElements,doneElements)
+}
+
+const deleteSpecific = () => {
+    let cross = document.querySelectorAll(".cross")
+    cross.forEach(cross => {
+
+        cross.addEventListener("click", function(){
+            cross.parentElement.remove()
+            countTotal()
+        })
+        
+    })
+}
+
 
 document.getElementById("first_radio").addEventListener("click", function(){
     compose(grabText,temp)()
+    deleteSpecific()
+    countTotal()
+    
 })
 todoInput.addEventListener("keyup", e => {
-    if ( e.keyCode == 13) {
+    if (e.keyCode == 66|| e.keyCode == 13) {
         e.preventDefault();
         compose(grabText,temp)()
        }
