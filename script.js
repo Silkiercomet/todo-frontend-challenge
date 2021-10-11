@@ -65,20 +65,68 @@ const grabText = () => {
 
 const countTotal = () => document.querySelector(".todo__counterleft").textContent = `${document.querySelectorAll(".radio2").length} `
 
-const organizedList = () => {
-    let newArray = [], currentArrays = [...document.querySelectorAll(".radio2")],
-    activeElements = currentArrays.filter(a => {
+const organizedList = (x) => {
+    let newArray = [], currentArrays = document.querySelectorAll(".radio2"),
+    activeElements = [],doneElements = []
+
+     currentArrays.forEach(a => {
         if(a.checked !=  true){
-            return a.parentElement
+            
+            activeElements.push(a.id)
         }
     })
-    doneElements = currentArrays.filter(a => {
+
+      currentArrays.forEach(a => {
         if( a.checked == true){
-            return a.parentElement
+            doneElements.push(a.id)
         }
     })
+    // todoItemsColor parent element of the items
+    const addActive = () => {
+        activeElements.forEach(x => {
+            todoItemsColor.appendChild(document.querySelector(`#${x}`))
+     
+         })
+    } 
+    const addCompleted = () => {
+        doneElements.forEach(x => {
+            todoItemsColor.appendChild(document.querySelector(`#${x}`))
+            x.checked = true
+         })
+    } 
+    const removeActive = () => {
+
+    } 
+    const removeCompleted = () => {
+
+    } 
+    switch (x) {
+        case 1:
+        //shows all the elements
+        addActive()
+        addCompleted()
+        break;
+
+        case 2:
+        //shows the active elements
+        addActive()
+        doneElements.forEach(x => {
+            document.querySelector(`#${x}`).parentElement.remove()
+         })
+        break;
+
+        case 3:
+        //shows the completed elements
+        addCompleted()
+        activeElements.forEach(x => {
+            document.querySelector(`#${x}`).parentElement.remove()
+            
+         })
+        break;
+    }
+
     //1 shows all, 2 shows actives and 3 shows completed 
-    console.log(activeElements,doneElements)
+    
 }
 
 const deleteSpecific = () => {
@@ -106,6 +154,19 @@ todoInput.addEventListener("keyup", e => {
         compose(grabText,temp)()
        }
        console.log("worked")
+})
+
+document.querySelector("#show__active").addEventListener("click", function(){
+    console.log("listen")
+    organizedList(2)
+})
+document.querySelector("#show__completed").addEventListener("click", function(){
+    console.log("listen")
+    organizedList(3)
+})
+document.querySelector("#all").addEventListener("click", function(){
+    console.log("listen")
+    organizedList(1)
 })
 const compose = (f, g) => (data) => g(f(data));
 const temp = addLi()
