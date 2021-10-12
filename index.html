@@ -26,7 +26,7 @@
           <i class="todo__header_icon_light" id="icon-change"></i>
         </header>
 
-         <form class="todo__input-container light  " id="todo-form"><!--dark--> 
+         <form class="todo__input-container light  " id="todo-form" onsubmit="return false"><!--dark--> 
           <label for="first_radio" class="con">
             <input type="checkbox" name="todo radio" id="first_radio" class="radio ">
             <span class="checkmark"></span>
@@ -36,24 +36,17 @@
 
         <section class="todo__list light_shadow light-background light " id="todo__list_background"><!--dark--> 
           <menu class="todo__items light-color " id="menu__items_color"><!--dark--> 
-           
-            <li class="todo__item">
-              <input type="checkbox" name="todo radio" id="checkbox-item-3" class="radio radio2">
-              <label for="checkbox-item-3" class="con">
-                <span class="checkmark"></span>
-              </label>
-              <span class="todo__text">javascript course aprt 2</span>
-              <i class="cross"><img src="images/icon-cross.svg" alt=""></i>
-            </li> 
+
+
 
           </menu>
           <footer class="todo__footer light-color" id="footer"><!--dark--> 
             <p class="todo__items_remain"><span class="todo__counterleft">0 </span>items left</p>
             <nav class="todo__footer_nav">
-              <ul>
-                <li class="active">All</li>
-                <li>Active</li>
-                <li>Completed</li>
+              <ul id="footer__state">
+                <li class="active" id="all">All</li>
+                <li id="show__active">Active</li>
+                <li id="show__completed">Completed</li>
               </ul>
             </nav>
             <button class="clear__done light " id="btn">Clear Completed</button><!--dark--> 
@@ -67,7 +60,9 @@
 
     
   </main>
+ 
 
+  <!-- Add dynamic number --> 
 
 
   <script src="script.js"></script>
