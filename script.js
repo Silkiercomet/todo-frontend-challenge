@@ -55,7 +55,7 @@ const addLi = () => {
             <span class="todo__text">${x}</span>
             <i class="cross"><img src="images/icon-cross.svg" alt=""></i>
         `;
-        pushArray(newLi,`item-num${counter}`)
+        pushArray(newLi, counter)
         todoItemsColor.appendChild(newLi)
         counter += 1
         document.querySelector("#todo-content-input").value = ""
@@ -66,13 +66,15 @@ const addLi = () => {
 const sortedArrays = () => {
     checkedArray = [], unchekedArray = []
     for(let i = 0; i < counter; i++){
-        if(newArray[i][0].querySelector(`#checkbox-item-${i}`).checked == true){
+        if(newArray[i][0].querySelector(`#checkbox-item-${newArray[i][1]}`).checked == true){
             
-            console.log(newArray[i][0].querySelector(`#checkbox-item-${i}`).checked == true)
+           // console.log(newArray[i][0].querySelector(`#checkbox-item-${newArray[i][1]}`).checked == true)
             checkedArray.push(newArray[i])
-        }else if(newArray[i][0].querySelector(`#checkbox-item-${i}`).checked == false){
-            console.log(newArray[i][0].querySelector(`#checkbox-item-${i}`).checked == false)
+            //sessionStorage.setItem("checkedList",checkedArray)
+        }else if(newArray[i][0].querySelector(`#checkbox-item-${newArray[i][1]}`).checked == false){
+           // console.log(newArray[i][0].querySelector(`#checkbox-item-${newArray[i][1]}`).checked == false)
             unchekedArray.push(newArray[i])
+            
         }
     }
 }
@@ -137,7 +139,7 @@ todoInput.addEventListener("keyup", e => {
             e.addEventListener("click", sortedArrays)
         })
        }
-      console.log(e)
+      //console.log(e)
 })
 
 const footerState = () => {
@@ -151,7 +153,7 @@ const footerState = () => {
 document.querySelector("#show__active").addEventListener("click", function(){
     //unchekedArray todo__items
     todoItemsColor.innerHTML = ""
-    for (let i = 0; i <= unchekedArray.length-1; i++) {
+    for (let i = 0; i < unchekedArray.length; i++) {
         todoItemsColor.appendChild(unchekedArray[i][0])
     }
     footerState()
@@ -161,7 +163,7 @@ document.querySelector("#show__active").addEventListener("click", function(){
 
 document.querySelector("#show__completed").addEventListener("click", function(){
     todoItemsColor.innerHTML = ""
-    for (let i = 0; i <= checkedArray.length-1; i++) {
+    for (let i = 0; i < checkedArray.length; i++) {
         todoItemsColor.appendChild(checkedArray[i][0])
     }
     footerState()
@@ -171,7 +173,7 @@ document.querySelector("#show__completed").addEventListener("click", function(){
 
 document.querySelector("#all").addEventListener("click", function(){
     todoItemsColor.innerHTML = ""
-    for (let i = 0; i <= newArray.length-1; i++) {
+    for (let i = 0; i < newArray.length; i++) {
         todoItemsColor.appendChild(newArray[i][0])
     }
     footerState()
@@ -187,7 +189,7 @@ btn.addEventListener("click", function(){
         todoItemsColor.appendChild(newArray[i][0])
     }
     countTotal()
-    
+    sortedArrays()
 })
 const compose = (f, g) => (data) => g(f(data));
 const temp = addLi()
